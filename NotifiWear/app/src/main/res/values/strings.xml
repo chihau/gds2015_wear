@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">NotifiWear</string>
+
+    <string name="info">Ejemplo de notificaciones compatibles con Android Wear para
+        dispositivos con Android 1.6 en adelante</string>
+    <string name="action_settings">Settings</string>
+
+    <string-array name="reply_choices">
+        <item>Sí</item>
+        <item>No</item>
+        <item>Tal vez</item>
+        <item>A veces</item>
+    </string-array>
+</resources>
