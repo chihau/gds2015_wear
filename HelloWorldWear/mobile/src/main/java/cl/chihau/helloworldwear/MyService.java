@@ -1,12 +1,12 @@
-package cl.chihau.helloworldwear;
-
-import com.google.android.gms.wearable.DataEventBuffer;
-import com.google.android.gms.wearable.WearableListenerService;
-
-public class MyService extends WearableListenerService {
-
-    @Override
-    public void onDataChanged(DataEventBuffer dataEvents) {
+//package cl.chihau.helloworldwear;
+//
+//import com.google.android.gms.wearable.DataEventBuffer;
+//import com.google.android.gms.wearable.WearableListenerService;
+//
+//public class MyService extends WearableListenerService {
+//
+//    @Override
+//    public void onDataChanged(DataEventBuffer dataEvents) {
 //        for (DataEvent dataEvent : dataEvents) {
 //            if (dataEvent.getType() == DataEvent.TYPE_CHANGED) {
 //                DataMap dataMap = DataMapItem.fromDataItem(dataEvent.getDataItem()).getDataMap();
@@ -24,5 +24,5 @@ public class MyService extends WearableListenerService {
 //                }
 //            }
 //        }
-    }
-}
+//    }
+//}

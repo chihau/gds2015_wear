@@ -43,8 +43,6 @@ public class MainActivity extends AppCompatActivity implements DataApi.DataListe
 
         tv = (TextView) findViewById(R.id.tv);
 
-        tv.setText("probando");
-
         mGoogleApiClient = new GoogleApiClient.Builder(this)
                 .addApi(Wearable.API)
                 .addConnectionCallbacks(this)
@@ -112,6 +110,7 @@ public class MainActivity extends AppCompatActivity implements DataApi.DataListe
         for (DataEvent dataEvent : dataEvents) {
             if (dataEvent.getType() == DataEvent.TYPE_CHANGED) {
                 DataMap dataMap = DataMapItem.fromDataItem(dataEvent.getDataItem()).getDataMap();
+
                 String path = dataEvent.getDataItem().getUri().getPath();
                 if (path.equals("/step-counter")) {
                     final int steps = dataMap.getInt("step-count");
@@ -119,6 +118,7 @@ public class MainActivity extends AppCompatActivity implements DataApi.DataListe
 
                     Log.d("TEST", "steps: " + steps + " - " + "timestamp: " + time);
 
+                    // Para actualizar un textView desde otro Thread
                     tv.post(new Runnable() {
                         public void run() {
                             tv.setText("steps: " + steps + " - " + "timestamp: " + time);

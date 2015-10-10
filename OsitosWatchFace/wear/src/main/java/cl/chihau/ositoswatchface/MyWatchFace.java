@@ -5,7 +5,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
-import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -234,20 +233,20 @@ public class MyWatchFace extends CanvasWatchFaceService {
             Log.d("HelloWatchFace", "eventTime: " + eventTime);
         }
 
-        public boolean openApp(Context context, String packageName) {
-            PackageManager manager = context.getPackageManager();
-
-            Intent i = manager.getLaunchIntentForPackage(packageName);
-            if (i == null) {
-                return false;
-                //throw new PackageManager.NameNotFoundException();
-            }
-            i.addCategory(Intent.CATEGORY_LAUNCHER);
-            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            context.startActivity(i);
-            return true;
-
-        }
+//        public boolean openApp(Context context, String packageName) {
+//            PackageManager manager = context.getPackageManager();
+//
+//            Intent i = manager.getLaunchIntentForPackage(packageName);
+//            if (i == null) {
+//                return false;
+//                //throw new PackageManager.NameNotFoundException();
+//            }
+//            i.addCategory(Intent.CATEGORY_LAUNCHER);
+//            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//            context.startActivity(i);
+//            return true;
+//
+//        }
 
         @Override
         public void onDestroy() {
